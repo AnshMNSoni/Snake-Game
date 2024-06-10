@@ -33,7 +33,6 @@ screen.onkey(sap.right, 'Right')
 
 game_is_on = True
 while game_is_on:
-    
     screen.update()
     time.sleep(0.1)
     sap.move()
@@ -46,16 +45,19 @@ while game_is_on:
     
     # Detect collision with wall:
     if sap.head.xcor() > 290 or sap.head.xcor() < -290 or sap.head.ycor() > 250 or sap.head.ycor() < -290:
-        game_is_on = False
-        screen.clearscreen()
-        screen.bgcolor('black')
-        score.gameover()
+        score.reset()
+        score.update()
+        food.refresh()
+        sap.reset_snake()
+
         
     # Detect collision with tail:
     for segment in sap.segments[1:]:
         if sap.head.distance(segment) < 10:
-            game_is_on = False
-            score.gameover()
+            score.reset()
+            score.update()
+            food.refresh()
+            sap.reset_snake()
     
     
 screen.exitonclick()
