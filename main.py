@@ -13,6 +13,7 @@ tt.color('white')
 
 for t in range(5, 0, -1):
     screen.bgcolor('black')
+    tt.hideturtle()
     tt.write(f"Game starts in {t} sec...", align="Center", font=('Courier', 22, 'normal'))
     time.sleep(1)
     screen.clear()
