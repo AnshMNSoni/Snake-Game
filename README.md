@@ -3,7 +3,7 @@
 
 ---
 
-#### Library Used: Turtle, Random
+#### Library Used: Turtle
 
 --- 
 
